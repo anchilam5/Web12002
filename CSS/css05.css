@@ -1,0 +1,89 @@
+.banner {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px lightblue;
+    animation: colorchange infinite 5s;
+}
+
+@keyframes colorchange{
+    from{
+        background-color: red;
+    }
+    to{
+        background-color: rgb(246, 2, 246);
+    }
+}
+
+.container {
+    display: inline-block;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 100vh; /* Chiều cao của container */
+}
+
+.box {
+    display: inline-flex;
+    width: 250px;
+    height: 250px;
+    margin-right: 100px;
+    margin-top: 50px;
+    border: 2px solid black;
+    color: yellow;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+#box1{
+    border-color: red;
+    border-style: solid;
+    border-width: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: img infinite 5s;
+}
+
+@keyframes img{
+    from{
+        background-image: url(../Images/3.jpg);
+    }
+    to{
+        background-image: url(../Images/6.jpg);
+    }
+}
+
+#box2, #box3{
+    background-color: cyan;
+}
+
+#box2{
+    border-color: blue;
+    border-style: dashed;
+    border-width: 5px;
+    border-radius: 0px 25px 0px 25px;
+}
+
+#box3{
+    border-color: blue;
+    border-style: dashed;
+    border-width: 5px;
+    border-radius: 25px 0px 25px 0px;
+}
+
+#rotate{
+    background-color: green;
+    border-color: yellow;
+    border-width: 5px;
+    animation: rotate infinite 3s linear;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

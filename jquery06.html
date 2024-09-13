@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQUERY6-DI CHUYỂN ĐỐI TƯỢNG</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#btMoveLeft").click(function () {
+          $("div").animate(
+            {
+              left: "0",
+            },
+            1000
+          );
+        });
+        $("#btMoveRight").click(function () {
+          var left = window.innerWidth - $("div").width();
+          $("div").animate(
+            {
+              left: left,
+            },
+            1000
+          );
+        });
+        $("#btMoveUp").click(function () {
+          $("div").animate(
+            {
+              top: "0",
+            },
+            1000
+          );
+        });
+        $("#btMoveDown").click(function () {
+          var top = window.innerHeight - $("div").height();
+          $("div").animate({
+            top: top,
+          });
+        });
+      });
+    </script>
+    <style>
+      div {
+        width: 200px;
+        height: 150px;
+        background-color: #08817a;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <button id="btMoveLeft">MoveLeft</button>
+    <button id="btMoveRight">MoveRight</button>
+    <button id="btMoveUp">MoveUp</button>
+    <button id="btMoveDown">MoveDown</button>
+  </body>
+</html>

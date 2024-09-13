@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính tuổi</title>
+  </head>
+  <body>
+    <h1>Tính tuổi</h1>
+    <table id="ageForm" border="1px">
+      <tr>
+        <th style="text-align: left">
+          <label for="name">Tên:</label>
+          <input type="text" id="name" required />
+        </th>
+      </tr>
+      <tr>
+        <th style="text-align: left">
+          <label for="birthYear">Năm sinh:</label>
+          <input type="number" id="birthYear" required />
+        </th>
+      </tr>
+    </table>
+    <br />
+    <button type="button" onclick="calculateAge()">Tính tuổi</button>
+    <p id="result"></p>
+    <script>
+      function calculateAge() {
+        const name = document.getElementById("name").value;
+        const birthYear = parseInt(document.getElementById("birthYear").value);
+        const currentYear = new Date().getFullYear();
+        const age = currentYear - birthYear;
+        document.getElementById(
+          "result"
+        ).textContent = `Chào bạn ${name}! \nbạn ${age} tuổi.`;
+      }
+    </script>
+  </body>
+</html>

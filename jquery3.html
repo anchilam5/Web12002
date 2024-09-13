@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jquery.library.js"></script>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table tr td {
+        width: 30%;
+        border: 1px solid #ff751a;
+        padding: 5px;
+      }
+      table tr th {
+        border: 1px solid #79ff4d;
+        padding: 5px;
+        background-color: aliceblue;
+      }
+      .newBrgd {
+        background-color: #08817a;
+      }
+      caption {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+    </style>
+
+    <script>
+      $(document).ready(function () {
+        $("#change").click(function () {
+          $("tr:odd").addClass("newBrgd");
+        });
+        $("#normal").click(function () {
+          $("tr:odd").removeClass("newBrgd");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <table>
+      <caption>
+        BANG GIA VAT TU
+      </caption>
+      <tr>
+        <th>Ten vat tu</th>
+        <th>Don vi tinh</th>
+        <th>Don gia</th>
+      </tr>
+      <tr>
+        <td>Cat</td>
+        <td>Khoi</td>
+        <td>77,000</td>
+      </tr>
+      <tr>
+        <td>Da</td>
+        <td>Khoi</td>
+        <td>99,000</td>
+      </tr>
+      <tr>
+        <td>Xi mang Ha Tien loai 1</td>
+        <td>Bao</td>
+        <td>100,000</td>
+      </tr>
+      <tr>
+        <td>Xi mang Ha tien loai 2</td>
+        <td>Bao</td>
+        <td>120,000</td>
+      </tr>
+    </table>
+    <button id="change">Doi mau nen</button>
+    <button id="normal">Mau nen mac dinh</button>
+  </body>
+</html>
+

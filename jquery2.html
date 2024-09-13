@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery 02-Count Date</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jquery.library.js"></script>
+    <script>
+      $().ready(function () {
+        $("#btTotal").click(function () {
+          var d1 = $("#dayFrom").val();
+          var d2 = $("#dayTo").val();
+          d1 = new Date(d1);
+          d2 = new Date(d2);
+          var songay = (d2.getTime() - d1.getTime()) / (3600 * 24 * 1000);
+          $("#result").text("So ngay la: " + songay);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Tinh so ngay giua hai thoi diem
+      </caption>
+      <tr>
+        <td>Tu ngay:</td>
+        <td><input type="date" id="dayFrom" /></td>
+      </tr>
+      <tr>
+        <td>Den ngay:</td>
+        <td><input type="date" id="dayTo" /></td>
+      </tr>
+      <tr>
+        <td><button id="btTotal">Tinh so ngay</button></td>
+        <td><span id="result"></span></td>
+      </tr>
+    </table>
+  </body>
+</html>

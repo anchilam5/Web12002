@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngày trong tháng và đồng hồ</title>
+    <style>
+        #clock {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Yêu cầu nhập tháng và năm khi trang được tải
+            let month = prompt("Nhập tháng (1-12):");
+            let year = prompt("Nhập năm:", 2000);
+
+            // Kiểm tra số ngày trong tháng
+            let daysInMonth = new Date(year, month, 0).getDate();
+            if(year < 0 || month < 1  || month > 12 )
+                alert("Không hợp lệ! Vui lòng nhập lại");
+            else
+                document.write(`Tháng ${month} năm ${year} có ${daysInMonth} ngày.`);
+
+        // Hiển thị ngày giờ hiện tại và đồng hồ điện tử
+        function showDateTime() {
+            let now = new Date();
+            let date = now.toLocaleDateString();
+            let time = now.toLocaleTimeString();
+            document.getElementById('date').innerText = `Ngày hiện tại: ${date}`;
+            document.getElementById('clock').innerText = `Giờ hiện tại: ${time}`;
+            setInterval(showDateTime, 1000);
+        }
+
+        // Cập nhật đồng hồ mỗi giây
+        
+    </script>
+    <br>
+    <button onclick="showDateTime()">Xem ngày giờ</button>
+    <div id="date"></div>
+    <div id="clock"></div>
+</body>
+</html>

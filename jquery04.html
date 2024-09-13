@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery04</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("div").click(function () {
+          //lấy giá trị của thuộc tính background-color
+          var color = $(this).css("background-color");
+
+          var name;
+          console.log(name);
+          switch (color) {
+            case "rgb(255, 0, 0)":
+              name = "Đỏ";
+              break;
+            case "rgb(0, 0, 255)":
+              name = "Xanh Dương";
+              break;
+            case "rgb(0, 255, 0)":
+              name = "Xanh lá";
+              break;
+            case "rgb(255, 0, 255)":
+              name = "Tím";
+              break;
+          }
+          //hiển thị chuỗi kết quả
+          $("#result").html("Màu bạn chọn là " + name + ": " + color);
+          //áp dụng màu chữ, font chữu cho div có id="result"
+          $("#result").css({ color: color, "font-weight": "bold" });
+        });
+      });
+    </script>
+
+    <style>
+      div {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        float: left;
+      }
+      #result {
+        clear: left;
+        width: 500px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="background-color: #00f"></div>
+    <div style="background-color: #f00"></div>
+    <div style="background-color: #f0f"></div>
+    <div style="background-color: #0f0"></div>
+    <br />
+    <div id="result"></div>
+  </body>
+</html>
